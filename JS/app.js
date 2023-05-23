@@ -32,6 +32,7 @@ function obtenerID(resultadosBusqueda) {
                 const estreno = data.release_date
                 const generos = data.genre_names
                 const calificacion = data.user_rating
+                const trailer = data.trailer
                 carta += /*HTML*/`
                 <div class="imagen__inversor">
                     <div class="face front">
@@ -44,7 +45,7 @@ function obtenerID(resultadosBusqueda) {
                         <p>${generos}</p>
                         <p>${calificacion}</p>
                         <div class="link">
-                            <a class="link-carta" href="">ver</a>
+                            <a class="link-carta" href="${trailer} ">ver</a>
                         </div>
                     </div>
                 </div>
