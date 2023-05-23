@@ -1,10 +1,8 @@
 import { options } from "./Options.js";
-
 document.querySelector(".buscar").addEventListener("click", (e) => {
     e.preventDefault();
-
     const buscar = document.getElementById('inputFormulario').value;
-    const url = `https://watchmode.p.rapidapi.com/autocomplete-search/?search_value=${buscar}&search_type=1 `;
+    const url = `https://watchmode.p.rapidapi.com/autocomplete-search/?search_value=${buscar}&search_type=1`;
     const fetchData = async () => {
         try {
             const response = await fetch(url, options);
@@ -23,7 +21,6 @@ function obtenerID(resultadosBusqueda) {
     for (let i = 0; i < resultadosBusqueda.length; i++) {
         const ID = resultadosBusqueda[i].id;
         const url_info_detallada = `https://watchmode.p.rapidapi.com/title/${ID}/details/?language=ES`;
-
         const fetchData = async () => {
             try {
                 const response = await fetch(url_info_detallada, options)
@@ -35,20 +32,6 @@ function obtenerID(resultadosBusqueda) {
                 const estreno = data.release_date
                 const generos = data.genre_names
                 const calificacion = data.user_rating
-                /*
-                    <div class="face front">
-                        <img class="simon__borrero__imagen" src="https://i.pinimg.com/originals/2d/ca/2b/2dca2b63c24de470bda80a6b4dc40ad3.jpg" alt="">
-                        <h3>Henrry Cavill</h3>
-                    </div>
-                    <div class="face back">
-                        <h3>Henrry Cavill</h3>
-                        <p><strong>VIEJO SABROSO, WuW!!!</strong></p>
-                        <div class="link">
-                            <a href="#">Detalles</a>
-                        </div>
-                    </div>
-                */
-
                 carta += /*HTML*/`
                 <div class="imagen__inversor">
                     <div class="face front">
@@ -61,17 +44,17 @@ function obtenerID(resultadosBusqueda) {
                         <p>${generos}</p>
                         <p>${calificacion}</p>
                         <div class="link">
-                            <a href="#">Detalles</a>
+                            <a class="link-carta" href="">ver</a>
                         </div>
                     </div>
                 </div>
-
                 `;
             } catch (error) {
             }
-            console.log(carta);
+            // console.log(carta);
             document.querySelector('.inversores').innerHTML = carta;
         };
         fetchData();
     }
 }
+
