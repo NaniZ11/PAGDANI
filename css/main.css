@@ -1,0 +1,11 @@
+:root {
+    --box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --border-radius: 0.35rem;
+}
+body {
+    --color--bg: linear-gradient(90deg, rgba(95,9,110,1) 0%, rgba(187,69,196,1) 19%, rgba(198,108,198,1) 35%, rgba(179,79,184,1) 45%, rgba(162,69,168,1) 49%, rgba(170,79,179,1) 55%, rgba(178,88,189,1) 61%, rgba(160,79,174,1) 65%, rgba(155,39,179,0.9819386372713148) 82%, rgba(103,35,141,1) 100%);
+    --color--bg--secondary: #b071b6;
+    --color--text: #e4dcdc;
+    color: var(--color--text);
+    background-color: var(--color--bg);
+}
