@@ -18,7 +18,6 @@ body {
 .navbar {
     display: flex;
     justify-content: space-around;
-    box-shadow: var(--box-shadow);
 }
 
 .header{
