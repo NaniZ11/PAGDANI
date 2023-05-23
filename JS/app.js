@@ -1,4 +1,4 @@
-import { options } from "./options.js";
+import { options } from "./Options.js";
 
 document.querySelector(".buscar").addEventListener("click", (e) => {
     e.preventDefault();
@@ -50,37 +50,27 @@ function obtenerID(resultadosBusqueda) {
                 */
 
                 carta += /*HTML*/`
-                <div class="face front">
-                    <img class="simon__borrero__imagen" src="${poster}" alt="">
-                    <h3></h3>
-                </div>
-                <div class="face back">
-                    <h3>Henrry Cavill</h3>
-                    <p><strong>VIEJO SABROSO, WuW!!!</strong></p>
-                    <div class="link">
-                        <a href="#">Detalles</a>
+                <div class="imagen__inversor">
+                    <div class="face front">
+                        <img class="simon__borrero__imagen" src="${poster}" alt="">
+                        <h3>${titulo}</h3>
+                    </div>
+                    <div class="face back">
+                        <h3>${titulo}</h3>
+                        <p>${estreno}</p>
+                        <p>${generos}</p>
+                        <p>${calificacion}</p>
+                        <div class="link">
+                            <a href="#">Detalles</a>
+                        </div>
                     </div>
                 </div>
 
-
-
-                <div class="card-content">
-                    <div class="card-img">
-                        <img src="${poster}" alt="">
-                    </div>
-                    <div class="card-text">
-                        <h3>Titulo: <span class="titulo">${titulo}</span></h3>
-                        <p>Tipo: <span class="type">${tipo}</span></p>
-                        <p>Estreno en el: <span class="estreno">${estreno}</span></p>
-                        <p>Generos: <span class="generos">${generos}</span></p>
-                        <p>Calificación: <span class="calificacion">${calificacion}</span></p>
-                    </div>
-                </div>
-                `
+                `;
             } catch (error) {
             }
             console.log(carta);
-            document.querySelector('#contenido').innerHTML = carta;
+            document.querySelector('.inversores').innerHTML = carta;
         };
         fetchData();
     }
